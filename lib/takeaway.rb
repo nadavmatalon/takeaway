@@ -45,12 +45,7 @@ class Takeaway
 		dishes = get_dish_list_in_order_of(customer)
 		order_cost = customer.order.total_price
 		delivery_message = "Thank you, #{customer.name}! Your order of [#{dishes}] at a cost of £#{order_cost} was placed and will be delivered before #{delivery_time}"
-
-		account_sid = "ACdc00326c5c73560c5f5696aca9a0d6bd"
-		auth_token = "99622269e52fcc6a8fb97dd59a380742"
-		@client = Twilio::REST::Client.new account_sid, auth_token
-		@message = @client.account.messages.create({:to => customer.phone, :from => "+441275595053", :body => delivery_message})
-
+		send_confirmation_text_to(customer, delivery_message)
 		delivery_message
 		true
 	end
@@ -62,5 +57,14 @@ class Takeaway
 		end 
 		"#{dishes.join(", ")}"
 	end
+
+	def send_confirmation_text_to(customer, delivery_message)
+		account_sid = "ACdc00326c5c73560c5f5696aca9a0d6bd"
+		auth_token = "99622269e52fcc6a8fb97dd59a380742"
+		@client = Twilio::REST::Client.new account_sid, auth_token
+		@message = @client.account.messages.create({:to => customer.phone, :from => "+441275595053", :body => delivery_message})
+		true
+	end
+
 end
 

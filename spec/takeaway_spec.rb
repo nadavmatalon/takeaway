@@ -29,6 +29,7 @@ describe Takeaway do
 	end
 
 	it "can place an order" do
+		allow(takeaway).to receive(:send_confirmation_text_to) {true}
 		takeaway.add(customer)
 		takeaway.take_dish_order(customer, salad)
 		takeaway.take_dish_order(customer, rice)
