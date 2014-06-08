@@ -14,15 +14,15 @@ For a quick demonstration of the program's execution, open irb/pry in terminal a
 
 ###Details about Structure and Functionality
 
-The program contains 4 classes:
+The program is based on four classes:
 
-Takeaway - the 'resturant', responsible for managing customers and order.
+- Takeaway - each instance simulates a single resturant in which customers and orders are managed.
 
-Customer - stores customer details (name, phone number) and her/his specific order.
+- Customer - each instance stores customer details (name, phone number) and her/his specific order.
 
-Order - contains the dishes ordered by ther customer.
+- Order - each instance contains the dishes ordered by a specific customer.
 
-Dish - stores dish type and price.
+- Dish - each instance stores dish type and price.
 
 The first step is to create a new Takeaway instance to simulate the restorant (takeaway = Takeaway.new)
 
@@ -30,13 +30,13 @@ Next, it is necessary to instanciate the various dishes on offer (e.g. salad = D
 
 It is then time to add individual customers to the resturant's list of customers (John = Customer.new("John", "075012345"))
 
-Each customer is initialized with an empty order, to which the resturant can add various dishes, e.g. take_dish_order(John, salad)
+Each customer is initialized with an empty order to which the resturant can add various dishes, e.g. take_dish_order(John, salad)
 
  During the ordering process the resturant can provide the total cost of the order at any point, e.g. takeaway.total_order_price(John)
 
  The resturant can also give a list of all the ordered dishes by the customer at any point of the ordering process, e.g. takeaway.get_dish_list_in_order_of(John)
 
- Finally, the restorant can place the order and send text confirmation to the customer's phone, eg takeaway.place_order(John)
+ Finally, the resturant can place the order and send text confirmation to the customer's phone, eg takeaway.place_order(John)
 
 
 Code & tests written by: Nadav Matalon @ Makers Academy (May 2014 Cohort)
