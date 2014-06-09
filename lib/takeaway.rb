@@ -59,9 +59,7 @@ class Takeaway
 	end
 
 	def send_confirmation_text_to(customer, delivery_message)
-		account_sid = "ACdc00326c5c73560c5f5696aca9a0d6bd"
-		auth_token = "99622269e52fcc6a8fb97dd59a380742"
-		@client = Twilio::REST::Client.new account_sid, auth_token
+		@client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_TOKEN']
 		@message = @client.account.messages.create({:to => customer.phone, :from => "+441275595053", :body => delivery_message})
 		true
 	end
