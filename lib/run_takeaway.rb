@@ -7,7 +7,8 @@ def run_takeaway
 	beef = Dish.new(:Beef, 10.1)
 	veal = Dish.new(:Veal, 5.5)
 	takeaway = Takeaway.new
-	customer = Customer.new("Nadav", "+447503671785")
+	customer = Customer.new("Nadav", ENV['NADAV_PHONE'])
+
 
 	system "clear" or system "cls"
 	print "TAKEAWAY\n\n"
