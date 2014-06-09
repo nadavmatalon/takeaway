@@ -2,7 +2,7 @@ require_relative "takeaway.rb"
 
 def run_takeaway 
 
-	salad =  Dish.new(:Salad, 2.5)
+	salad = Dish.new(:Salad, 2.5)
 	rice = Dish.new(:Rice, 4.4)
 	beef = Dish.new(:Beef, 10.1)
 	veal = Dish.new(:Veal, 5.5)
