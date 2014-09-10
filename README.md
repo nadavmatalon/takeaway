@@ -25,7 +25,7 @@ It represented our first encounter with using an
 
 ##General Description
 
-The 'Takeaway' app simulates an order management system of a takeaway resturant.
+The __Takeaway__ app simulates an order management system of a takeaway resturant.
 
 The code was written in [Ruby](https://www.ruby-lang.org/en/) 
 using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
@@ -35,7 +35,7 @@ The app uses the [twilio-ruby](https://github.com/twilio/twilio-ruby)
 gem to send live order confirmation __text messages__.
 
 __Important Note__: The [twilio-ruby](https://github.com/twilio/twilio-ruby) 
-system will only send text messages to __verified phonenumber__. As a result, if you
+system will only send text messages to __verified phone numbers__. As a result, if you
 want to run the app on your machine, you will need to clone the repo, [verify your 
 phone number with Twilio] (http://www.twilio.com/help/faq/voice/how-do-i-add-a-verified-outgoing-caller-id-with-twilio) 
 and modify the `environmental variables` in the `./lib/takeaway.rb` and 
@@ -44,7 +44,7 @@ and modify the `environmental variables` in the `./lib/takeaway.rb` and
 
 ##Guidelines
 
-Write a `Takeaway` program and implement the following functionality:
+Write a __Takeaway__ program and implement the following functionality:
 
 * A list of dishes with prices
 * The customer places the order by giving the list of dishes, their quantities and a 
@@ -87,18 +87,22 @@ And then follow the functional description in the next section.
 
 The app includes four classes:
 
-* __Takeaway__
+* __Takeaway__ 
+
   Each instance of this class simulates a single resturant in which customers and 
   their orders are managed
 
-* __Customer__
+* __Customer__ 
+
   Each instance stores a single customer details (name, phone number) and the 
   details of their order
 
-* __Order__ 
+* __Order__
+
   Each instance contains the dishes ordered by a specific customer
 
 * __Dish__ 
+  
   Each instance stores a dish type and its price
 
 
