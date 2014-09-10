@@ -102,7 +102,7 @@ The app includes four classes:
   Each instance contains the dishes ordered by a specific customer
 
 * __Dish__ 
-  
+
   Each instance stores a dish type and its price
 
 
@@ -147,8 +147,11 @@ The resturant can also give a list of all the dishes currently ordered by the cu
 Finally, the resturant can place the order and send __an order text confirmation__ to the 
 customer's phone:
 
+(Note that this line will __throw an error__ if you don't [verify your 
+phone number with Twilio] (http://www.twilio.com/help/faq/voice/how-do-i-add-a-verified-outgoing-caller-id-with-twilio))
+
 ```pry
->> takeaway.place_order(John)  // This line will __throw an error__ if you don't verify you phone number with Twillio first.
+>> takeaway.place_order(John) 
 ```
 
 
