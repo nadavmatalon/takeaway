@@ -17,7 +17,7 @@
 
 ##Intro
 
-This repo contians the answer to __Week 5 Friday Challange (Part II)__ as part 
+This repo contians my answer to __Week 5 Friday Challange (Part II)__ as part 
 of the course at [Makers Academy](http://www.makersacademy.com/).
 
 It represented our first encounter with using an 
@@ -39,7 +39,7 @@ __Important Note__: The [twilio-ruby](https://github.com/twilio/twilio-ruby)
 system will only send text messages to __verified phone numbers__. As a result, if you
 want to run the app on your machine, you will need to clone the repo, [verify your 
 phone number with Twilio] (http://www.twilio.com/help/faq/voice/how-do-i-add-a-verified-outgoing-caller-id-with-twilio) 
-and modify the `environmental variables` in the `./lib/takeaway.rb` and 
+and modify the `environmental variables` in the `./lib/takeaway.rb` &amp; 
 `./lib/run_takeaway.rb` files.
 
 
