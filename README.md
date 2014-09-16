@@ -12,6 +12,7 @@
 * [How to Run](#how-to-run)
 * [Functionl Description](#functional-description)
 * [Testing](#testing)
+* [License](#license)
 
 
 ##Intro
@@ -166,4 +167,8 @@ $> cd takeaway
 $> rspec
 ```
 
+
+##License
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
 
