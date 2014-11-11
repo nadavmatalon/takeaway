@@ -20,8 +20,25 @@ class Customer
 		@order
 	end
 
-	def add_dish(dish)
-		order.add(dish)
+	def add dish
+		order.add dish
 	end
 
+	def order_total_price
+		order.total_price
+	end
+
+	def order_dish_list
+		order.dish_list
+	end
+
+	def order_delivery_time
+		order.set_delivery_time
+	end
+
+	def create_delivery_message
+		"Thank you, #{name}! Your order of [#{order.dish_list_to_str}] 
+		at a cost of £#{order_total_price} was placed and will be delivered 
+		before #{order_delivery_time}"
+	end
 end

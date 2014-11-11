@@ -1,29 +1,34 @@
 require_relative "takeaway.rb"
 
 def run_takeaway 
+	setup_data
+	clear_screen
+	place_order
+	puts order_str
+end
 
-	salad = Dish.new(:Salad, 2.5)
-	rice = Dish.new(:Rice, 4.4)
-	beef = Dish.new(:Beef, 10.1)
-	veal = Dish.new(:Veal, 5.5)
-	takeaway = Takeaway.new
-	customer = Customer.new("Nadav", ENV['NADAV_PHONE'])
+def setup_data
+	@salad, @rice, @beef = Dish.new(:Salad, 2.5), Dish.new(:Rice, 4.4), Dish.new(:Beef, 10.1)
+	@takeaway, @customer = Takeaway.new, Customer.new("Nadav", ENV['NADAV_PHONE'])
+end
 
-
+def clear_screen
 	system "clear" or system "cls"
-	print "TAKEAWAY\n\n"
-	takeaway.add(customer)
-	print "Taken call from customer:\n"
-	print "Customer name: #{customer.name}\n"
-	print "Customer phone: #{customer.phone}\n\n"
-	takeaway.take_dish_order(customer, salad)
-	takeaway.take_dish_order(customer, rice)
-	takeaway.take_dish_order(customer, beef)
-	print "Taken customer order of: #{takeaway.get_dish_list_in_order_of(customer)}\n\n"
-	print "Order cost: £#{takeaway.total_order_price(customer)}\n\n"
-	print "Order delivery estimated by: £#{takeaway.delivery_time}\n\n"
-	takeaway.place_order(customer)
-	print "Placed customer order and sent confirmation text to customer phone\n\n"
+end
+
+def place_order
+	@takeaway.add(@customer)
+	[@salad, @rice, @beef].each { |dish| @customer.add dish }
+	@takeaway.place_order @customer
+end
+
+def order_str
+	"TAKEAWAY\n\nTaken call from customer:\nCustomer name: #{@customer.name}\n
+	Customer phone: Reserved\n\nTaken customer order of: 
+	#{@customer.order.dish_list_to_str}\n\n Order cost: 
+	£#{@customer.order_total_price}\n\nOrder delivery estimated by: 
+	#{@customer.order_delivery_time}\n\n Placed customer order and sent confirmation 
+	text to customer phone\n\n"
 end
 
 run_takeaway

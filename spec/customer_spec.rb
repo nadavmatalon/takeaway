@@ -17,26 +17,26 @@ describe Customer do
 	end
 
 	it "is initialized with an empty order" do
-		expect(customer.order.dish_list).to eq []
+		expect(customer.order_dish_list).to eq []
 	end
 
 	it "can add a dish to her/his order" do
-		customer.add_dish(salad)
-		expect(customer.order.dish_list).to eq [salad]
+		customer.add salad
+		expect(customer.order_dish_list).to eq [salad]
 	end
 
 	it "can add more than one dish to her/his order" do
-		customer.add_dish(salad)
-		customer.add_dish(veal)
-		expect(customer.order.dish_list).to eq [salad, veal]
+		customer.add salad
+		customer.add veal
+		expect(customer.order_dish_list).to eq [salad, veal]
 	end
 
 	it "can get the total price of her/his order" do
-		expect(customer.order.total_price).to eq 0
-		customer.add_dish(salad)
-		expect(customer.order.total_price).to eq 2.5
-		customer.add_dish(veal)
-		expect(customer.order.total_price).to eq 8.0
+		expect(customer.order_total_price).to eq 0
+		customer.add salad
+		expect(customer.order_total_price).to eq 2.5
+		customer.add veal
+		expect(customer.order_total_price).to eq 8.0
 	end
 end
 

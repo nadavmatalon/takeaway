@@ -14,22 +14,11 @@ class Dish
 	end
 
 	def set_type(new_type)
-		if new_type.is_a? Symbol
-			@type = new_type
-			true
-		else
-			false
-		end
+		@type = new_type
 	end
 
 	def set_price(new_price)
-		if (new_price.is_a? Float) && (new_price >= 0.0)
-			@price = new_price
-			true
-		else
-			false
-		end
+		@price = new_price
 	end
-
 end
 
